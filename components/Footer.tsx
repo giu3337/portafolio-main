@@ -34,10 +34,10 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Giuseppe Garcia
+          Copyright © 2025 Giuseppe Garcia-Cancela
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        <div className="flex items-center md:gap-3 gap-6 mb-8 mt-5 md:mb-0">
           {socialMedia.map((info) => (
             <div
               key={info.id}
