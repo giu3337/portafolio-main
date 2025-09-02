@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/gg.png" sizes="any" />
-        
+
       </head>
       <body className={inter.className}>
         <ThemeProvider
@@ -32,6 +32,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      
     </html>
   );
 }

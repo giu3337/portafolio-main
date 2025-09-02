@@ -41,6 +41,9 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  video,
+  poster,
+  icons,
 }: {
   className?: string;
   id: number;
@@ -50,6 +53,9 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
+  video?: string;
+  poster?: string;
+  icons?: string[];
 }) => {
   const leftLists = ["ReactJS", "Express", "Typescript"];
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
@@ -89,13 +95,23 @@ export const BentoGridItem = ({
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
-          {img && (
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={poster}
+              className={cn(imgClassName, "object-cover object-center ")}
+            />
+          ) : img ? (
             <img
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
             />
-          )}
+          ) : null}
         </div>
         <div
           className={`absolute right-0 -bottom-5 ${
@@ -139,34 +155,17 @@ export const BentoGridItem = ({
           {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
 
-          {/* Tech stack list div */}
-          {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-              </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+          {/* Icons grid for Skills & Tools */}
+          {Array.isArray(icons) && icons.length > 0 && (
+            <div className="mt-4 grid grid-cols-3 gap-4 md:gap-5 w-[70%] max-w-[220px] z-10">
+              {icons.map((src, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center rounded-md bg-[#10132E]/80 p-2 hover:bg-[#1a1f4a] transition-colors"
+                >
+                  <img src={src} alt={src} className="h-6 w-6 object-contain" />
+                </div>
+              ))}
             </div>
           )}
           {id === 6 && (

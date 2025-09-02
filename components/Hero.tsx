@@ -61,7 +61,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl dark:text-white text-black">
-            Hi! I&apos;m Giuseppe, a Next.js Developer based in Spain.
+            Ciao! I&apos;m Giuseppe, a Next.js Developer.
           </p>
 
           <a href="#about" aria-label="Navigate to about section">
