@@ -15,7 +15,8 @@ export const gridItems = [
     titleClassName: "justify-end",
     img: "/b1.svg",
     spareImg: "",
-    video: "/background-video.mp4",
+    video:
+      "https://res.cloudinary.com/daho5vk2u/video/upload/f_auto,q_auto/videoPorta-web_igcygk.mp4",
     poster: "/b1.svg",
   },
   {
