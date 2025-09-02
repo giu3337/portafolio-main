@@ -154,7 +154,8 @@ export const BentoGridItem = ({
           </div>
 
           {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />} 
+          {id === 2 && <GridGlobe />}
+          
 
           {/* Icons grid for Skills & Tools */}
           {Array.isArray(icons) && icons.length > 0 && (
