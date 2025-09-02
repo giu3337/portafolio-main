@@ -2,20 +2,35 @@
 
 import { navItems } from "@/data";
 
-import dynamic from "next/dynamic";
+import NextDynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
 export const dynamic = "force-dynamic";
 
-const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
-const Clients = dynamic(() => import("@/components/Clients"), { ssr: false });
-const Approach = dynamic(() => import("@/components/Approach"), { ssr: false });
-const Experience = dynamic(() => import("@/components/Experience"), { ssr: false });
-const RecentProjects = dynamic(() => import("@/components/RecentProjects"), { ssr: false });
-const HeroVideoSection = dynamic(() => import("@/components/ui/HeroVideoSection"), { ssr: false });
-const ApproachVideoSection = dynamic(() => import("@/components/ui/ApproachVideoSection"), { ssr: false });
+const Grid = NextDynamic(() => import("@/components/Grid"), { ssr: false });
+const Clients = NextDynamic(() => import("@/components/Clients"), {
+  ssr: false,
+});
+const Approach = NextDynamic(() => import("@/components/Approach"), {
+  ssr: false,
+});
+const Experience = NextDynamic(() => import("@/components/Experience"), {
+  ssr: false,
+});
+const RecentProjects = NextDynamic(
+  () => import("@/components/RecentProjects"),
+  { ssr: false }
+);
+const HeroVideoSection = NextDynamic(
+  () => import("@/components/ui/HeroVideoSection"),
+  { ssr: false }
+);
+const ApproachVideoSection = NextDynamic(
+  () => import("@/components/ui/ApproachVideoSection"),
+  { ssr: false }
+);
 
 const Home = () => {
   return (

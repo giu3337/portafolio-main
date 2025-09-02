@@ -6,13 +6,13 @@ import SmoothAnimations from "./ui/SmoothAnimations";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10 relative" id="contact">
+    <footer className="w-full pt-20 pb-10 relative overflow-hidden" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 bottom-0 min-h-96 pointer-events-none">
+      <div className="w-full absolute left-0 bottom-0 min-h-96 pointer-events-none select-none">
         <img
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50"
+          className="w-full h-full opacity-50 object-cover"
         />
       </div>
 
